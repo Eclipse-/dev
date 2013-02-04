@@ -1,0 +1,14 @@
+## Interface: 50100
+## Author: Eclipsi, Foof
+
+## Title: dev
+## Version: nil
+
+## SavedVariables: TukuiData
+## SavedVariablesPerCharacter: TukuiDataPerChar
+
+## RequiredDeps: Tukui
+## OptionalDeps: Tukui_ConfigUI, Clique
+## X-oUF: oUFTukui
+
+dev.xml
