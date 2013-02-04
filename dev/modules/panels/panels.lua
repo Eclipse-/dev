@@ -1,5 +1,4 @@
--- import
-local T, C, L, G = unpack(Tukui)
+local T, C, L, G = unpack(Tukui) 
 
 -- Kill panels
 do
@@ -16,9 +15,13 @@ do
 	if (G.Panels.LeftDataTextToActionBarLine) then
 		G.Panels.RightDataTextToActionBarLine:Kill()
 	end
-	G.Panels.BottomLeftCube:Kill()
-	G.Panels.BottomRightCube:Kill()
-
+	if (G.Panels.BottomLeftCube) then
+		G.Panels.BottomLeftCube:Kill()
+	end
+	if (G.Panels.BottomRightCube) then
+		G.Panels.BottomRightCube:Kill()
+	end
+	
 	-- chat panels
 	if (G.Panels.LeftChatTabsBackground) then
 		G.Panels.LeftChatTabsBackground:Kill()
@@ -39,9 +42,27 @@ end
 -- Modify panels
 do
 	G.Panels.DataTextLeft:ClearAllPoints()
+	G.Panels.DataTextLeft:CreateShadow()
 	G.Panels.DataTextLeft:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", 10, 10)
 	G.Panels.DataTextRight:ClearAllPoints()
+	G.Panels.DataTextRight:CreateShadow()
 	G.Panels.DataTextRight:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -10, 10)
+	
+	if (G.Panels.LeftChatBackground) then
+		G.Panels.LeftChatBackground:ClearAllPoints()
+		G.Panels.LeftChatBackground:SetTemplate("Transparent")
+		G.Panels.LeftChatBackground:CreateShadow()
+		G.Panels.LeftChatBackground:Point("BOTTOMLEFT", G.Panels.DataTextLeft, "TOPLEFT", 0, 3)
+		G.Panels.LeftChatBackground:Size(T.InfoLeftRightWidth, 165)
+	end
+	
+	if (G.Panels.RightChatBackground) then
+		G.Panels.RightChatBackground:ClearAllPoints()
+		G.Panels.RightChatBackground:SetTemplate("Transparent")
+		G.Panels.RightChatBackground:CreateShadow()
+		G.Panels.RightChatBackground:Point("BOTTOMRIGHT", G.Panels.DataTextRight, "TOPRIGHT", 0, 3)
+		G.Panels.RightChatBackground:Size(T.InfoLeftRightWidth, 165)
+	end
 end
 
 
