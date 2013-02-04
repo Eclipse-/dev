@@ -1,1 +1,2 @@
 -- chatframes
+print("lol")
