@@ -2,4 +2,5 @@
 	<Include file="modules\panels\load.xml"/>
 	<Include file="modules\actionbars\load.xml"/>
 	<Include file="modules\maps\load.xml"/>
+	<Include file="modules\chat\load.xml"/>
 </Ui>
