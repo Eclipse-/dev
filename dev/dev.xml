@@ -3,4 +3,8 @@
 	<Include file="modules\actionbars\load.xml"/>
 	<Include file="modules\maps\load.xml"/>
 	<Include file="modules\chat\load.xml"/>
+<<<<<<< HEAD
+=======
+	<Include file="modules\buffs\load.xml"/>
+>>>>>>> Minimap, buff, load start.
 </Ui>
