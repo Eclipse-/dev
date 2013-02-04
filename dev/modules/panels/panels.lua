@@ -32,7 +32,7 @@ do
 		G.Panels.DataTextMinimapLeft:Kill()
 	end
 	if (G.Panels.DataTextMinimapRight) then
-		G.Panels.DataTextMinimapLeft:Kill()
+		G.Panels.DataTextMinimapRight:Kill()
 	end
 end
 
