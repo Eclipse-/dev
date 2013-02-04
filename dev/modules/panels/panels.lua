@@ -13,7 +13,7 @@ do
 		G.Panels.RightDataTextToActionBarLine:Kill()
 	end
 	if (G.Panels.LeftDataTextToActionBarLine) then
-		G.Panels.RightDataTextToActionBarLine:Kill()
+		G.Panels.LeftDataTextToActionBarLine:Kill()
 	end
 	if (G.Panels.BottomLeftCube) then
 		G.Panels.BottomLeftCube:Kill()
