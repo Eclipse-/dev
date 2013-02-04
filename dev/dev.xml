@@ -1,3 +1,5 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
-	<Script file="modules\panels\panels.lua"/>
+	<Include file="modules\panels\load.xml"/>
+	<Include file="modules\actionbars\load.xml"/>
+	<Include file="modules\maps\load.xml"/>
 </Ui>
