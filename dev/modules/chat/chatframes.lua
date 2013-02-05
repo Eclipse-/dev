@@ -31,7 +31,6 @@ do
 			_G[chat.."EditBox"].backdrop:ClearAllPoints()
 			_G[chat.."EditBox"].backdrop:Point("TOPLEFT", TukuiInfoLeft, 0, 0)
 			_G[chat.."EditBox"].backdrop:Point("BOTTOMRIGHT", TukuiInfoLeft, 0, 0)
-			_G[chat.."EditBox"].backdrop:SetBackdropBorderColor(1, 0, 0)
 
 			-- tab text
 			_G[chat.."TabText"]:Hide()
@@ -56,7 +55,7 @@ do
 			if i == 4 then FCF_SetWindowName(frame, "Loot & Trade") end
 		end
 	end
-	
+
 	local frame = CreateFrame("frame", nil);
 	frame:RegisterEvent("PLAYER_ENTERING_WORLD");
 	frame:SetScript("OnEvent", setUpChat);
