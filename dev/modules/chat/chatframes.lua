@@ -16,8 +16,8 @@ do
 		ChatFrame_AddMessageGroup(ChatFrame3, "LOOT")
 		ChatFrame_AddMessageGroup(ChatFrame3, "MONEY")
 
-		-- hide unused chat
-		-- ChatFrame3:Hide()
+		FCF_UnDockFrame(ChatFrame3)
+		FCF_SetTabPosition(ChatFrame3, 0)
 
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
