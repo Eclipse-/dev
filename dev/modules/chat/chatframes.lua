@@ -39,7 +39,7 @@ do
 
 			-- tab text
 			_G[chat.."TabText"]:Hide()
-			_G[chat.."TabText"]:SetFont(C.media.caith, 12)
+			_G[chat.."TabText"]:SetFont(C.media.caith, 10)
 			tab:HookScript("OnEnter", function() _G[chat.."TabText"]:Show() end)
 			tab:HookScript("OnLeave", function() _G[chat.."TabText"]:Hide() end)
 
