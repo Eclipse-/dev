@@ -43,7 +43,6 @@ local SpellIDs = {
 -- Nasty stuff below. Don't touch.
 local class = select(2, UnitClass("Player"))
 local buffs = SpellIDs[class]
-local sound
 
 if (buffs and buffs[1]) then
 	local function OnEvent(self, event)	
