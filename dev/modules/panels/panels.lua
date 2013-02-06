@@ -37,6 +37,11 @@ do
 	if (G.Panels.DataTextMinimapRight) then
 		G.Panels.DataTextMinimapRight:Kill()
 	end
+	
+	-- action bar panels
+	G.ActionBars.Bar2:Kill()
+	G.ActionBars.Bar3:Kill()
+	G.ActionBars.Bar4:Kill()
 end
 
 -- Modify panels
@@ -53,7 +58,7 @@ do
 		G.Panels.LeftChatBackground:SetTemplate("Transparent")
 		G.Panels.LeftChatBackground:CreateShadow()
 		G.Panels.LeftChatBackground:Point("BOTTOMLEFT", G.Panels.DataTextLeft, "TOPLEFT", 0, 3)
-		G.Panels.LeftChatBackground:Size(T.InfoLeftRightWidth, 165)
+		G.Panels.LeftChatBackground:Size(T.InfoLeftRightWidth, 167)
 	end
 	
 	if (G.Panels.RightChatBackground) then
@@ -61,11 +66,21 @@ do
 		G.Panels.RightChatBackground:SetTemplate("Transparent")
 		G.Panels.RightChatBackground:CreateShadow()
 		G.Panels.RightChatBackground:Point("BOTTOMRIGHT", G.Panels.DataTextRight, "TOPRIGHT", 0, 3)
-		G.Panels.RightChatBackground:Size(T.InfoLeftRightWidth, 165)
+		G.Panels.RightChatBackground:Size(T.InfoLeftRightWidth, 167)
 	end
+	
+	-- action bars
+	G.ActionBars.Bar1:ClearAllPoints()
+	G.ActionBars.Bar1:Point("BOTTOM", UIParent, "BOTTOM", 0, 10)
+	G.ActionBars.Bar1:SetTemplate("Transparent")
+	G.ActionBars.Bar1:CreateShadow("Default")
+	G.ActionBars.Bar1:SetWidth((T.buttonsize * 18) + (T.buttonspacing * 19))
+	G.ActionBars.Bar1:SetHeight((T.buttonsize * 2) + (T.buttonspacing * 3))
+	
+	G.ActionBars.Bar5:ClearAllPoints()
+	G.ActionBars.Bar5:Point("RIGHT", UIParent, "RIGHT", -10, 0)
+	G.ActionBars.Bar5:SetTemplate("Transparent")
+	G.ActionBars.Bar5:CreateShadow("Default")
+	G.ActionBars.Bar5:SetWidth((T.buttonsize * 2) + (T.buttonspacing * 3))
+	G.ActionBars.Bar5:SetHeight((T.buttonsize * 12) + (T.buttonspacing * 13))
 end
-
-
--- actionbars
---G.ActionBars.Bar1:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 10)
---G.ActionBars.Bar4:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 10)
