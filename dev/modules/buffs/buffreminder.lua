@@ -10,7 +10,7 @@
 -- Spells that should be shown with an icon in the middle of the screen when not buffed.
 --------------------------------------------------------------------------------------------
 
-SpellIDs = {
+local SpellIDs = {
 	PRIEST = {
 		588, -- inner fire
 		73413, -- inner will
