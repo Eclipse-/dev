@@ -1,3 +1,4 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="header.lua"/>
+	<Script file="buffreminder.lua"/>
 </Ui>
