@@ -1,2 +1,25 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="armor"/>
+	<Script file="avoidance"/>
+	<Script file="bags"/>
+	<Script file="battleground"/>
+	<Script file="calltoarms"/>
+	<Script file="crit"/>
+	<Script file="currency"/>
+	<Script file="dps"/>
+	<Script file="durability"/>
+	<Script file="fps"/>
+	<Script file="friend"/>
+	<Script file="gold"/>
+	<Script file="guild"/>
+	<Script file="haste"/>
+	<Script file="hit"/>
+	<Script file="hps"/>
+	<Script file="mastery"/>
+	<Script file="micromenu"/>
+	<Script file="power"/>
+	<Script file="regen"/>
+	<Script file="system"/>
+	<Script file="talent"/>
+	<Script file="time"/>
 </Ui>

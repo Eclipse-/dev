@@ -6,4 +6,5 @@
 	<Include file="modules\maps\load.xml"/>
 	<Include file="modules\chat\load.xml"/>
 	<Include file="modules\buffs\load.xml"/>
+	<Include file="modules\datatext\load.xml"/>
 </Ui>
