@@ -1,0 +1,33 @@
+local T, C, L, G = unpack(Tukui) 
+
+local target = G.UnitFrames.Target
+
+do
+	-- kill
+	target.panel:Kill()
+	target.shadow:Kill()
+	target:SetBackdrop(nil)
+	
+	-- setup
+	T.UnitframePanels(target, "target")
+	
+	-- power bar
+	target.Power:Point("TOPLEFT", target.Health, "BOTTOMLEFT", 0, -3)
+	target.Power:Point("TOPRIGHT", target.Health, "BOTTOMRIGHT", 0, -3)
+
+	-- health text
+	target.Health.value = T.SetFontString(target.Panel, C.media.caith, 12)
+	target.Health.value:Point("RIGHT", target.Panel, "RIGHT", -4, 0)
+
+	-- target text
+	target.Name:SetFont(C.media.caith, 12)
+	
+	-- castbar
+	target.Castbar:ClearAllPoints()
+	target.Castbar:Point("CENTER", UIParent, "CENTER", 0, -200)
+	target.Castbar:Height(T.buttonsize - 4)
+	target.Castbar:Width(250)
+	
+	target.Castbar.button:ClearAllPoints()
+	target.Castbar.button:Point("RIGHT", target.CastbarBG, "LEFT", -3, 0)
+end

@@ -1,10 +1,10 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<!-- Media -->
 	<Include file="media\load.xml"/>
-
+	
 	<!-- Config -->
 	<Include file="config\load.xml"/>
-
+	
 	<!-- Modules -->
 	<Include file="modules\panels\load.xml"/>
 	<Include file="modules\actionbars\load.xml"/>
@@ -13,4 +13,6 @@
 	<Include file="modules\buffs\load.xml"/>
 	<Include file="modules\datatext\load.xml"/>
 	<Include file="modules\blizzard\load.xml"/>
+	<Include file="modules\skins\load.xml"/>
+	<Include file="modules\unitframes\load.xml"/>
 </Ui>
