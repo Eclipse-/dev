@@ -1,3 +1,3 @@
-local T, C, L, G = unpack(select(2, ...)) 
+local T, C, L, G = unpack(Tukui) 
 
 if not C["datatext"].battleground then return end
