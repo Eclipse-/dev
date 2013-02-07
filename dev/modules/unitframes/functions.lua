@@ -15,6 +15,20 @@ function T.UnitframePanels(self, unit)
 	frame:CreateShadow()
 	self.Background = frame
 	
+	if unit == "player" or unit =="target" then
+		local spacer = CreateFrame("Frame", self:GetName().."_Spacer", self)
+		spacer:SetFrameLevel(self.Health:GetFrameLevel() + 1)
+		spacer:SetFrameStrata(self.Health:GetFrameStrata())
+		spacer:Point("TOPLEFT", self.Health, "BOTTOMLEFT", -1, -1)
+		spacer:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 1, -1)
+		spacer:Height(1)
+		spacer:SetBackdrop({
+			bgFile = C["media"].blank,
+			insets = { left = 0, right = 0, top = 0, bottom = 0 }
+		})
+		spacer:SetBackdropColor(unpack(C["media"].bordercolor))
+	end
+
 	if unit == "player" or unit == "target" or unit == "pet" or unit == "targettarget" then
 		local panel = CreateFrame("Frame", self:GetName().."_Panel", self)
 		panel:Point("TOPLEFT", frame, "BOTTOMLEFT", 0, -3)

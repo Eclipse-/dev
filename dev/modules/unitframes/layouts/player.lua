@@ -18,8 +18,8 @@ do
 	T.UnitframePanels(player, "player")
 	
 	-- power bar
-	player.Power:Point("TOPLEFT", player.Health, "BOTTOMLEFT", 0, -4)
-	player.Power:Point("TOPRIGHT", player.Health, "BOTTOMRIGHT", 0, -4)
+	player.Power:Point("TOPLEFT", player.Health, "BOTTOMLEFT", 0, -3)
+	player.Power:Point("TOPRIGHT", player.Health, "BOTTOMRIGHT", 0, -3)
 	
 	-- health text
 	player.Health.value = T.SetFontString(player.Panel, C.media.caith, 12)
