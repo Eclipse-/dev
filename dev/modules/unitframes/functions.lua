@@ -1,3 +1,5 @@
+local T, C, L, G = unpack(Tukui)
+
 function T.UnitframePanels(self, unit)
 	
 	local frame = CreateFrame("Frame", self:GetName().."_Background", self)
