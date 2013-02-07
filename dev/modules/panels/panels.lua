@@ -74,13 +74,13 @@ do
 	G.ActionBars.Bar1:Point("BOTTOM", UIParent, "BOTTOM", 0, 10)
 	G.ActionBars.Bar1:SetTemplate("Transparent")
 	G.ActionBars.Bar1:CreateShadow("Default")
-	G.ActionBars.Bar1:SetWidth((T.buttonsize * 18) + (T.buttonspacing * 19))
-	G.ActionBars.Bar1:SetHeight((T.buttonsize * 2) + (T.buttonspacing * 3))
+	G.ActionBars.Bar1:SetWidth((T.buttonsize * 18) + (T.buttonspacing * 19) + 2)
+	G.ActionBars.Bar1:SetHeight((T.buttonsize * 2) + (T.buttonspacing * 3) + 2)
 	
 	G.ActionBars.Bar5:ClearAllPoints()
 	G.ActionBars.Bar5:Point("RIGHT", UIParent, "RIGHT", -10, 0)
 	G.ActionBars.Bar5:SetTemplate("Transparent")
 	G.ActionBars.Bar5:CreateShadow("Default")
-	G.ActionBars.Bar5:SetWidth((T.buttonsize * 2) + (T.buttonspacing * 3))
-	G.ActionBars.Bar5:SetHeight((T.buttonsize * 12) + (T.buttonspacing * 13))
+	G.ActionBars.Bar5:SetWidth((T.buttonsize * 2) + (T.buttonspacing * 3) + 2)
+	G.ActionBars.Bar5:SetHeight((T.buttonsize * 12) + (T.buttonspacing * 13) + 2)
 end

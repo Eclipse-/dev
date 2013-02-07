@@ -12,7 +12,7 @@ do
 		
 		
 		if i == 1 then
-			b:SetPoint("TOPLEFT", bar, T.buttonspacing, -T.buttonspacing)
+			b:SetPoint("TOPLEFT", bar, (T.buttonspacing + 1), (-T.buttonspacing - 1))
 		else
 			b:SetPoint("TOP", b2, "BOTTOM", 0, -T.buttonspacing)
 		end

@@ -12,7 +12,7 @@ do
 				b:ClearAllPoints()
 				
 				if i == 1 then
-					b:SetPoint("BOTTOMLEFT", bar, ((T.buttonsize * 3) + (T.buttonspacing * 4)), T.buttonspacing)
+					b:SetPoint("BOTTOMLEFT", bar, ((T.buttonsize * 3) + (T.buttonspacing * 4) + 1), (T.buttonspacing + 1))
 				else
 					b:SetPoint("LEFT", b2, "RIGHT", T.buttonspacing, 0)
 				end
