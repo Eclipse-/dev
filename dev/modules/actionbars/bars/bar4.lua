@@ -10,7 +10,6 @@ do
 		local b2 = G.ActionBars.Bar4["Button"..i-1]
 		b:ClearAllPoints()
 		
-		
 		if i == 1 then
 			b:SetPoint("TOPRIGHT", bar, (-T.buttonspacing - 1), (-T.buttonspacing - 1))
 		else

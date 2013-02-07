@@ -83,4 +83,10 @@ do
 	G.ActionBars.Bar5:CreateShadow("Default")
 	G.ActionBars.Bar5:SetWidth((T.buttonsize * 2) + (T.buttonspacing * 3) + 2)
 	G.ActionBars.Bar5:SetHeight((T.buttonsize * 12) + (T.buttonspacing * 13) + 2)
+	
+	-- pet bar
+	G.ActionBars.Pet:SetTemplate("Transparent")
+	G.ActionBars.Pet:CreateShadow()
+	G.ActionBars.Pet:SetWidth((T.buttonsize) + (T.buttonspacing * 2) + 1)
+	G.ActionBars.Pet:SetHeight((T.buttonsize * 10) + (T.buttonspacing * 9))
 end

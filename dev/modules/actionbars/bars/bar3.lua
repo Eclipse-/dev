@@ -9,7 +9,6 @@ do
 		local b = G.ActionBars.Bar3["Button"..i]
 		local b2 = G.ActionBars.Bar3["Button"..i-1]
 		b:ClearAllPoints()
-		-- b:SetParent(TukuiBar3)
 		
 		if i == 1 then
 			b:Point("TOPRIGHT", G.ActionBars.Bar2["Button1"], "TOPLEFT", -((T.buttonsize * 2) + (T.buttonspacing * 3)), 0)

@@ -10,7 +10,6 @@ do
 		local b2 = G.ActionBars.Bar2["Button"..i-1]
 		b:ClearAllPoints()
 		
-		
 		if i == 1 then
 			b:Point("TOPLEFT", bar, ((T.buttonsize * 3) + (T.buttonspacing * 4) + 1), (-T.buttonspacing - 1))
 		else
