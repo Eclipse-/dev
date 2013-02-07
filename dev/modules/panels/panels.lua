@@ -39,9 +39,9 @@ do
 	end
 	
 	-- action bar panels
-	G.ActionBars.Bar2:Kill()
-	G.ActionBars.Bar3:Kill()
-	G.ActionBars.Bar4:Kill()
+	G.ActionBars.Bar2:SetAlpha(0)
+	G.ActionBars.Bar3:SetAlpha(0)
+	G.ActionBars.Bar4:SetAlpha(0)
 end
 
 -- Modify panels
