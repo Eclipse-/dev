@@ -47,7 +47,7 @@ do
 	player.Status:ClearAllPoints()
 	player.Status:Point("CENTER", player.Panel, "CENTER", 0, 1)
 
-<---- START CLASSES
+	------ START CLASSES ------
 	-- druid
 	if T.myclass == "DRUID" then
 		player.DruidManaText = T.SetFontString(player.Health, C.media.caith, 12)
@@ -210,7 +210,7 @@ do
 		StatueBG:SetTemplate("Default")
 		StatueBG:CreateShadow()		
 	end
-<---- END CLASS
+	------ END CLASSES ------
 end
 
 
