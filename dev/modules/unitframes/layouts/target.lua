@@ -49,7 +49,6 @@ do
 	target.ComboPointsBar.PostUpdate = T.ComboPointsBarUpdate
 	target.ComboPointsBar:Width(target:GetWidth())
 	
-	
 	for i = 1, 5 do
 		target.ComboPointsBar[i]:SetHeight(target.ComboPointsBar:GetHeight())
 		target.ComboPointsBar[i]:SetStatusBarTexture(C.media.empath)
@@ -87,5 +86,14 @@ do
 	target.Debuffs:Height((target.Background:GetWidth() / 9) + 1)
 	target.Debuffs:Width(target.Buffs:GetWidth())
 	target.Debuffs.size = (target.Buffs.size)
-	target.Debuffs.spacing = 3	
+	target.Debuffs.spacing = 3
+	
+		-- heal prediction
+	if C.unitframes.healcomm then
+		target.HealPrediction.myBar:SetStatusBarTexture(C.media.empath)
+		target.HealPrediction.myBar:SetStatusBarColor(0, 1, 0, 0.25)
+
+		target.HealPrediction.otherBar:SetStatusBarTexture(C.media.empath)
+		target.HealPrediction.otherBar:SetStatusBarColor(1, 0, 0, 0.25)
+	end
 end
