@@ -228,6 +228,15 @@ do
 		StatueBG:CreateShadow()		
 	end
 	------ END CLASSES ------
+	
+	-- heal prediction
+	if C.unitframes.healcomm then
+		player.HealPrediction.myBar:SetStatusBarTexture(C.media.empath)
+		player.HealPrediction.myBar:SetStatusBarColor(0, 1, 0, 0.25)
+
+		player.HealPrediction.otherBar:SetStatusBarTexture(C.media.empath)
+		player.HealPrediction.otherBar:SetStatusBarColor(1, 0, 0, 0.25)
+	end
 end
 
 
