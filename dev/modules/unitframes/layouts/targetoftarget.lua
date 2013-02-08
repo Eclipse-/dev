@@ -1,7 +1,8 @@
 local T, C, L, G = unpack(Tukui) 
 
 local targettarget = G.UnitFrames.TargetTarget
-	
+local adjustXY = 0
+
 do
 	-- kill
 	targettarget.panel:Kill()
@@ -11,6 +12,13 @@ do
 	-- setup
 	T.UnitframePanels(targettarget, "targettarget")
 	
+	-- size
+	targettarget:Size(129, 36)
+	
+	-- position
+	targettarget:ClearAllPoints()
+	targettarget:Point("TOPRIGHT", G.UnitFrames.Target, "BOTTOMRIGHT", 0, -9+adjustXY)
+
 	-- health bar
 	targettarget.Health:Height(18)
 	

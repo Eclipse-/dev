@@ -1,6 +1,7 @@
 local T, C, L, G = unpack(Tukui) 
 
 local player = G.UnitFrames.Player
+local adjustXY = 0
 
 do
 	-- kill
@@ -16,6 +17,13 @@ do
 	
 	-- setup
 	T.UnitframePanels(player, "player")
+	
+	-- size
+	player:Size(250, 57)
+	
+	-- position
+	player:ClearAllPoints()
+	player:Point("TOP", UIParent, "BOTTOM", -310, 230+adjustXY)
 	
 	-- power bar
 	player.Power:Point("TOPLEFT", player.Health, "BOTTOMLEFT", 0, -3)

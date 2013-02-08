@@ -1,6 +1,7 @@
 local T, C, L, G = unpack(Tukui) 
 
 local target = G.UnitFrames.Target
+local adjustXY = 0
 
 do
 	-- kill
@@ -11,6 +12,13 @@ do
 	-- setup
 	T.UnitframePanels(target, "target")
 	
+	-- size
+	target:Size(250, 57)
+
+	-- position
+	target:ClearAllPoints()
+	target:Point("TOP", UIParent, "BOTTOM", 310, 230+adjustXY)
+
 	-- power bar
 	target.Power:Point("TOPLEFT", target.Health, "BOTTOMLEFT", 0, -3)
 	target.Power:Point("TOPRIGHT", target.Health, "BOTTOMRIGHT", 0, -3)
