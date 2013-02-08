@@ -88,7 +88,7 @@ do
 		player.WildMushroom:Width(player:GetWidth())
 		player.WildMushroom:SetBackdrop(nil)
 		
-		local WildMushroomBG = CreateFrame("Frame", self:GetName().."_MushroomBG", player.WildMushroom)
+		local WildMushroomBG = CreateFrame("Frame", player:GetName().."_MushroomBG", player.WildMushroom)
 		WildMushroomBG:SetFrameLevel(player.WildMushroom:GetFrameLevel() - 1)
 		WildMushroomBG:SetFrameStrata(player.WildMushroom:GetFrameStrata())
 		WildMushroomBG:Point("TOPLEFT", -2, 2)
@@ -126,7 +126,7 @@ do
 		player.Statue:SetStatusBarTexture(C.media.empath)
 		player.Statue:SetStatusBarColor(.25, .65, .54)
 		
-		local RisenBG = CreateFrame("Frame", self:GetName().."_RisenBG", player.Statue)
+		local RisenBG = CreateFrame("Frame", player:GetName().."_RisenBG", player.Statue)
 		RisenBG:SetFrameLevel(player.Statue:GetFrameLevel() - 1)
 		RisenBG:SetFrameStrata(player.Statue:GetFrameStrata())
 		RisenBG:Point("TOPLEFT", -2, 2)
@@ -157,7 +157,7 @@ do
 			end
 		end
 		
-		local HarmonyBG = CreateFrame("Frame", self:GetName().."_HarmonyBG", player.HarmonyBar)
+		local HarmonyBG = CreateFrame("Frame", player:GetName().."_HarmonyBG", player.HarmonyBar)
 		HarmonyBG:SetFrameLevel(player.HarmonyBar:GetFrameLevel() - 1)
 		HarmonyBG:SetFrameStrata(player.HarmonyBar:GetFrameStrata())
 		HarmonyBG:Point("TOPLEFT", -2, 2)
@@ -173,7 +173,7 @@ do
 		player.Statue:SetStatusBarTexture(C.media.empath)
 		player.Statue:SetStatusBarColor(.25, .65, .54)
 
-		local StatueBG = CreateFrame("Frame", self:GetName().."_StatueBG", player.Statue)
+		local StatueBG = CreateFrame("Frame", player:GetName().."_StatueBG", player.Statue)
 		StatueBG:SetFrameLevel(player.Statue:GetFrameLevel() - 1)
 		StatueBG:SetFrameStrata(player.Statue:GetFrameStrata())
 		StatueBG:Point("TOPLEFT", -2, 2)
@@ -203,7 +203,7 @@ do
 			end
 		end
 			
-		local ShadowOrsbsBG = CreateFrame("Frame", self:GetName().."_ShadowOrbsBG", player.ShadowOrbsBar)
+		local ShadowOrsbsBG = CreateFrame("Frame", player:GetName().."_ShadowOrbsBG", player.ShadowOrbsBar)
 		ShadowOrsbsBG:SetFrameLevel(player.ShadowOrbsBar:GetFrameLevel() - 1)
 		ShadowOrsbsBG:SetFrameStrata(player.ShadowOrbsBar:GetFrameStrata())
 		ShadowOrsbsBG:Point("TOPLEFT", -2, 2)
@@ -219,7 +219,7 @@ do
 		player.Statue:SetStatusBarTexture(C.media.empath)
 		player.Statue:SetStatusBarColor(.25, .65, .54)
 
-		local StatueBG = CreateFrame("Frame", self:GetName().."_StatueBG", player.Statue)
+		local StatueBG = CreateFrame("Frame", player:GetName().."_StatueBG", player.Statue)
 		StatueBG:SetFrameLevel(player.Statue:GetFrameLevel() - 1)
 		StatueBG:SetFrameStrata(player.Statue:GetFrameStrata())
 		StatueBG:Point("TOPLEFT", -2, 2)
