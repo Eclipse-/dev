@@ -74,7 +74,6 @@ do
 	target.Buffs.PostUpdate = T.UpdateTargetDebuffsHeader
 
 	-- debuffs
-	target.Debuffs:SetTemplate("Default")
 	target.Debuffs:Height(1)
 	target.Debuffs.size = ((target.Background:GetWidth() / 8))	
 end
