@@ -72,8 +72,9 @@ do
 		player.DruidMana:ClearAllPoints()
 		player.DruidMana:Point("BOTTOMLEFT", player.Background, "TOPLEFT", 2, 5)
 		player.DruidMana:Height(2)
+		player.DruidMana:Width(player:GetWidth())
 		
-		local DruidManaBG = CreateFrame("Frame", _, player.DruidMana)
+		local DruidManaBG = CreateFrame("Frame", player:GetName().."_DruidManaBG", player.DruidMana)
 		DruidManaBG:SetFrameLevel(player.DruidMana:GetFrameLevel() - 1)
 		DruidManaBG:SetFrameStrata(player.DruidMana:GetFrameStrata())
 		DruidManaBG:Point("TOPLEFT", -2, 2)
@@ -84,9 +85,10 @@ do
 		player.WildMushroom:ClearAllPoints()
 		player.WildMushroom:Point("BOTTOMLEFT", player.Background, "TOPLEFT", 2, 5)
 		player.WildMushroom:Height(5)
+		player.WildMushroom:Width(player:GetWidth())
 		player.WildMushroom:SetBackdrop(nil)
 		
-		local WildMushroomBG = CreateFrame("Frame", _, player.WildMushroom)
+		local WildMushroomBG = CreateFrame("Frame", self:GetName().."_MushroomBG", player.WildMushroom)
 		WildMushroomBG:SetFrameLevel(player.WildMushroom:GetFrameLevel() - 1)
 		WildMushroomBG:SetFrameStrata(player.WildMushroom:GetFrameStrata())
 		WildMushroomBG:Point("TOPLEFT", -2, 2)
@@ -100,10 +102,10 @@ do
 			player.WildMushroom[i]:SetStatusBarColor(.5, .9, .6)
 			
 			if i == 1 then
-				player.WildMushroom[i]:Width((250 / 3) - 1)
+				player.WildMushroom[i]:Width((player:GetWidth() / 3) - 1)
 				player.WildMushroom[i]:SetPoint("LEFT", player.WildMushroom, "LEFT", 0, 0)
 			else
-				player.WildMushroom[i]:Width((250 / 3))
+				player.WildMushroom[i]:Width((player:GetWidth() / 3))
 				player.WildMushroom[i]:SetPoint("LEFT", player.WildMushroom[i-1], "RIGHT", 1, 0)
 			end
 			player.WildMushroom[i].bg = player.WildMushroom[i]:CreateTexture(nil, 'ARTWORK')
@@ -119,11 +121,12 @@ do
 		player.Statue:ClearAllPoints()
 		player.Statue:Point("BOTTOMLEFT", player.Background, "TOPLEFT", 2, 5)
 		player.Statue:Height(3)
+		player.Statue:Width(player:GetWidth())
 		player.Statue:SetBackdrop(nil)
 		player.Statue:SetStatusBarTexture(C.media.empath)
 		player.Statue:SetStatusBarColor(.25, .65, .54)
 		
-		local RisenBG = CreateFrame("Frame", _, player.Statue)
+		local RisenBG = CreateFrame("Frame", self:GetName().."_RisenBG", player.Statue)
 		RisenBG:SetFrameLevel(player.Statue:GetFrameLevel() - 1)
 		RisenBG:SetFrameStrata(player.Statue:GetFrameStrata())
 		RisenBG:Point("TOPLEFT", -2, 2)
@@ -137,6 +140,7 @@ do
 		player.HarmonyBar:ClearAllPoints()
 		player.HarmonyBar:Point("BOTTOMLEFT", player.Background, "TOPLEFT", 2, 5)
 		player.HarmonyBar:Height(6)
+		player.HarmonyBar:Width(player:GetWidth())
 		player.HarmonyBar:SetBackdrop(nil)
 		
 		for i = 1, 5 do
@@ -145,15 +149,15 @@ do
 			player.HarmonyBar[i]:SetStatusBarColor(.8, .7, .3)
 
 			if i == 1 then
-				player.HarmonyBar[i]:Width((250 / 4) - 2)
+				player.HarmonyBar[i]:Width((player:GetWidth() / 4) - 2)
 				player.HarmonyBar[i]:SetPoint("LEFT", player.HarmonyBar, "LEFT", 0, 0)
 			else
-				player.HarmonyBar[i]:Width((250 / 4) - 1)
+				player.HarmonyBar[i]:Width((player:GetWidth() / 4) - 1)
 				player.HarmonyBar[i]:SetPoint("LEFT", player.HarmonyBar[i-1], "RIGHT", 1, 0)
 			end
 		end
 		
-		local HarmonyBG = CreateFrame("Frame", _, player.HarmonyBar)
+		local HarmonyBG = CreateFrame("Frame", self:GetName().."_HarmonyBG", player.HarmonyBar)
 		HarmonyBG:SetFrameLevel(player.HarmonyBar:GetFrameLevel() - 1)
 		HarmonyBG:SetFrameStrata(player.HarmonyBar:GetFrameStrata())
 		HarmonyBG:Point("TOPLEFT", -2, 2)
@@ -164,11 +168,12 @@ do
 		player.Statue:ClearAllPoints()
 		player.Statue:Point("BOTTOMLEFT", player.Background, "TOPLEFT", 2, 18)
 		player.Statue:Height(3)
+		player.Statue:Width(player:GetWidth())
 		player.Statue:SetBackdrop(nil)
 		player.Statue:SetStatusBarTexture(C.media.empath)
 		player.Statue:SetStatusBarColor(.25, .65, .54)
 
-		local StatueBG = CreateFrame("Frame", _, player.Statue)
+		local StatueBG = CreateFrame("Frame", self:GetName().."_StatueBG", player.Statue)
 		StatueBG:SetFrameLevel(player.Statue:GetFrameLevel() - 1)
 		StatueBG:SetFrameStrata(player.Statue:GetFrameStrata())
 		StatueBG:Point("TOPLEFT", -2, 2)
@@ -182,6 +187,7 @@ do
 		player.ShadowOrbsBar:ClearAllPoints()
 		player.ShadowOrbsBar:Point("BOTTOMLEFT", player.Background, "TOPLEFT", 2, 5)
 		player.ShadowOrbsBar:Height(6)
+		player.ShadowOrbsBar:Width(player:GetWidth())
 		player.ShadowOrbsBar:SetBackdrop(nil)
 			
 		for i = 1, 3 do
@@ -189,31 +195,31 @@ do
 			player.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.empath)
 
 			if i == 1 then
-				player.ShadowOrbsBar[i]:Width((250 / 3) - 1)
+				player.ShadowOrbsBar[i]:Width((player:GetWidth() / 3) - 1)
 				player.ShadowOrbsBar[i]:SetPoint("LEFT", player.ShadowOrbsBar, "LEFT", 0, 0)
 			else
-				player.ShadowOrbsBar[i]:Width((250 / 3))
+				player.ShadowOrbsBar[i]:Width((player:GetWidth() / 3))
 				player.ShadowOrbsBar[i]:SetPoint("LEFT", player.ShadowOrbsBar[i-1], "RIGHT", 1, 0)
 			end
 		end
 			
-		local ShadowOrsbsBG = CreateFrame("Frame", _, player.ShadowOrbsBar)
+		local ShadowOrsbsBG = CreateFrame("Frame", self:GetName().."_ShadowOrbsBG", player.ShadowOrbsBar)
 		ShadowOrsbsBG:SetFrameLevel(player.ShadowOrbsBar:GetFrameLevel() - 1)
 		ShadowOrsbsBG:SetFrameStrata(player.ShadowOrbsBar:GetFrameStrata())
 		ShadowOrsbsBG:Point("TOPLEFT", -2, 2)
 		ShadowOrsbsBG:Point("BOTTOMRIGHT", 2, -2)
 		ShadowOrsbsBG:SetTemplate("Default")
 		ShadowOrsbsBG:CreateShadow()
-
 		
 		player.Statue:ClearAllPoints()
 		player.Statue:Point("BOTTOMLEFT", player.Background, "TOPLEFT", 2, 5)
 		player.Statue:Height(3)
+		player.Statue:Width(player:GetWidth())
 		player.Statue:SetBackdrop(nil)
 		player.Statue:SetStatusBarTexture(C.media.empath)
 		player.Statue:SetStatusBarColor(.25, .65, .54)
 
-		local StatueBG = CreateFrame("Frame", _, player.Statue)
+		local StatueBG = CreateFrame("Frame", self:GetName().."_StatueBG", player.Statue)
 		StatueBG:SetFrameLevel(player.Statue:GetFrameLevel() - 1)
 		StatueBG:SetFrameStrata(player.Statue:GetFrameStrata())
 		StatueBG:Point("TOPLEFT", -2, 2)

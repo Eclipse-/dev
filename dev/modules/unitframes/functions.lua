@@ -80,7 +80,6 @@ T.DruidBarDisplay = function(self, login)
 	local eb = self.EclipseBar
 	local m = self.WildMushroom
 	local dm = self.DruidMana
-	local shadow = self.shadow
 	local bg = self.DruidManaBackground
 	local flash = self.FlashInfo
 
@@ -89,11 +88,9 @@ T.DruidBarDisplay = function(self, login)
 	end
 	
 	if dm and dm:IsShown() then
-		shadow:Point("TOPLEFT", -4, 12)
 		bg:SetAlpha(1)
 	else
 		flash:Show()
-		shadow:Point("TOPLEFT", -4, 4)
 		if bg then bg:SetAlpha(0) end
 	end
 		
@@ -103,12 +100,9 @@ T.DruidBarDisplay = function(self, login)
 			txt:Show()
 			flash:Hide()
 		end
-		shadow:Point("TOPLEFT", -4, 12)
 		if bg then bg:SetAlpha(1) end
 		
-		-- mushroom
 		if m and m:IsShown() then
-			shadow:Point("TOPLEFT", -4, 21)
 			m:ClearAllPoints()
 			m:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 16)
 		end
@@ -118,15 +112,27 @@ T.DruidBarDisplay = function(self, login)
 			txt:Hide()
 		end
 		flash:Show()
-		shadow:Point("TOPLEFT", -4, 4)
 		if bg then bg:SetAlpha(0) end
 		
-		-- mushroom
 		if m and m:IsShown() then
-			shadow:Point("TOPLEFT", -4, 12)
 			m:ClearAllPoints()
 			m:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 		end
+	end
+end
+
+T.UpdateMushroomVisibility = function(self)
+	local p = self:GetParent()
+	local eb = p.EclipseBar
+	local dm = p.DruidMana
+	local m = p.WildMushroom
+	
+	if (eb and eb:IsShown()) or (dm and dm:IsShown()) then
+		m:ClearAllPoints()
+		m:Point("BOTTOMLEFT", p, "TOPLEFT", 0, 16)
+	elseif m:IsShown() then
+		m:ClearAllPoints()
+		m:Point("BOTTOMLEFT", p, "TOPLEFT", 0, 7)
 	end
 end
 
