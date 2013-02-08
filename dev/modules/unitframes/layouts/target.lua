@@ -30,6 +30,9 @@ do
 	-- target text
 	target.Name:SetFont(C.media.caith, 12)
 	
+	-- combat feedback text
+	player.CombatFeedbackText:SetFont(C.media.caith, 12, "THINOUTLINE")
+	
 	-- castbar
 	target.Castbar:ClearAllPoints()
 	target.Castbar:Point("CENTER", UIParent, "CENTER", 0, -200)

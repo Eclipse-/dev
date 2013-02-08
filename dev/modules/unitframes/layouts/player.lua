@@ -37,6 +37,9 @@ do
 	player.Power.value = T.SetFontString(player.Panel, C.media.caith, 12)
 	player.Power.value:Point("LEFT", player.Panel, "LEFT", 4, 0)
 	
+	-- combat feedback text
+	player.CombatFeedbackText:SetFont(C.media.caith, 12, "THINOUTLINE")
+	
 	-- castbar
 	player.Castbar:ClearAllPoints()
 	player.Castbar:Point("BOTTOM", UIParent, "BOTTOM", 0, 89)
