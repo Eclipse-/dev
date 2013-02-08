@@ -47,10 +47,18 @@ do
 	target.ComboPointsBar:Point("BOTTOMLEFT", target, "TOPLEFT", 0, 7)
 	target.ComboPointsBar:SetHeight(7)
 	target.ComboPointsBar.PostUpdate = T.ComboPointsBarUpdate
+	target.ComboPointsBar:Width(target:GetWidth())
+	
 	
 	for i = 1, 5 do
 		target.ComboPointsBar[i]:SetHeight(target.ComboPointsBar:GetHeight())
 		target.ComboPointsBar[i]:SetStatusBarTexture(C.media.empath)
+		
+		if i == 1 then
+			target.ComboPointsBar[i]:Width(target:GetWidth() / 5)
+		else
+			target.ComboPointsBar[i]:Width((target:GetWidth() / 5) - 1)
+		end					
 	end
 	
 	local ComboBG = CreateFrame("Frame", target:GetName().."_ComboBG", target.ComboPointsBar)
@@ -64,9 +72,9 @@ do
 	-- buffs
 	target.Buffs:ClearAllPoints()
 	target.Buffs:SetPoint("BOTTOMLEFT", target.Background, "TOPLEFT", 0, 3)
-	target.Buffs:Height(1)
+	target.Buffs:Height((target.Background:GetWidth() / 9) + 1)
 	target.Buffs:Width(target.Background:GetWidth())
-	target.Buffs.size = ((target.Background:GetWidth() / 9) + .9)
+	target.Buffs.size = (target.Buffs:GetHeight() + .1)
 	target.Buffs.spacing = 3
 	target.Buffs.initialAnchor = "BOTTOMLEFT"
 	target.Buffs.num = 8
@@ -74,7 +82,10 @@ do
 	target.Buffs.PostUpdate = T.UpdateTargetDebuffsHeader
 
 	-- debuffs
-	target.Debuffs:Height(1)
-	target.Debuffs.size = ((target.Background:GetWidth() / 9) + .9)
+	target.Debuffs:ClearAllPoints()
+	target.Debuffs:SetPoint("BOTTOMLEFT", target.Buffs, "TOPLEFT", 0, 3)
+	target.Debuffs:Height((target.Background:GetWidth() / 9) + 1)
+	target.Debuffs:Width(target.Buffs:GetWidth())
+	target.Debuffs.size = (target.Buffs.size)
 	target.Debuffs.spacing = 3	
 end
