@@ -10,7 +10,8 @@ do
 				local b = _G["PetActionButton"..i]
 				local b2 = _G["PetActionButton"..i-1]
 				b:ClearAllPoints()
-				
+				b:Size(T.buttonsize)
+
 				if i == 1 then
 					b:SetPoint("TOPLEFT", bar, (T.buttonspacing + 1), (-T.buttonspacing - 1))
 				else

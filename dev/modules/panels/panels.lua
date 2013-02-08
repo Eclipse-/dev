@@ -69,6 +69,7 @@ do
 		G.Panels.RightChatBackground:Size(T.InfoLeftRightWidth, 167)
 	end
 	
+	
 	-- action bars
 	G.ActionBars.Bar1:ClearAllPoints()
 	G.ActionBars.Bar1:Point("BOTTOM", UIParent, "BOTTOM", 0, 10)
@@ -87,6 +88,6 @@ do
 	-- pet bar
 	G.ActionBars.Pet:SetTemplate("Transparent")
 	G.ActionBars.Pet:CreateShadow()
-	G.ActionBars.Pet:SetWidth((T.buttonsize) + (T.buttonspacing * 2) + 1)
-	G.ActionBars.Pet:SetHeight((T.buttonsize * 10) + (T.buttonspacing * 9))
+	G.ActionBars.Pet:SetWidth((T.buttonsize) + (T.buttonspacing * 2) + 2)
+	G.ActionBars.Pet:SetHeight((T.buttonsize * 10) + (T.buttonspacing * 11) + 2)
 end
