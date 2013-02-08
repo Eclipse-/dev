@@ -31,7 +31,7 @@ do
 	target.Name:SetFont(C.media.caith, 12)
 	
 	-- combat feedback text
-	player.CombatFeedbackText:SetFont(C.media.caith, 12, "THINOUTLINE")
+	target.CombatFeedbackText:SetFont(C.media.caith, 12, "THINOUTLINE")
 	
 	-- castbar
 	target.Castbar:ClearAllPoints()
