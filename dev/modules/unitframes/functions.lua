@@ -172,5 +172,5 @@ T.UpdateTargetDebuffsHeader = function(self)
 	local addition = s
 	
 	if numBuffs == 0 then addition = 0 end
-	h:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", (T.lowversion and 0) or -2, y + addition + 2)
+	h:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 2, y + addition + 2)
 end
