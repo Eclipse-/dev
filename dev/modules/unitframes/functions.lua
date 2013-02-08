@@ -139,3 +139,38 @@ T.PostNamePosition = function(self)
 		self.Name:SetPoint("LEFT", self.Panel, "LEFT", 4, 0)
 	end
 end
+
+T.ComboPointsBarUpdate = function(self, parent, points)
+	local b = parent.Buffs
+		
+	if T.myclass == "ROGUE" and C.unitframes.movecombobar then
+		-- always show we this option enabled
+		self:Show()
+	else
+		if points > 0 then
+			if b then 
+				b:ClearAllPoints() 
+				b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", -2, 19)
+			end
+		else
+			if b then 
+				b:ClearAllPoints() 
+				b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", -2, 5)
+			end
+		end
+	end
+end
+
+T.UpdateTargetDebuffsHeader = function(self)
+	local numBuffs = self.visibleBuffs
+	local perRow = self.numRow
+	local s = self.size
+	local row = math.ceil((numBuffs / perRow))
+	local p = self:GetParent()
+	local h = p.Debuffs
+	local y = s * row
+	local addition = s
+	
+	if numBuffs == 0 then addition = 0 end
+	h:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", (T.lowversion and 0) or -2, y + addition + 2)
+end
