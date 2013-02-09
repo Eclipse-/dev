@@ -15,4 +15,7 @@
 	<Include file="modules\blizzard\load.xml"/>
 	<Include file="modules\skins\load.xml"/>
 	<Include file="modules\unitframes\load.xml"/>
+
+	<!-- Test file -->
+	<Include file="test\load.xml"/>
 </Ui>
