@@ -5,4 +5,7 @@
 	<Script file="layouts\target.lua"/>
 	<Script file="layouts\targetoftarget.lua"/>
 	<Script file="layouts\pet.lua"/>
+	
+	<Script file="layouts\dps\party.lua"/>
+	<Script file="layouts\heal\party.lua"/>
 </Ui>
