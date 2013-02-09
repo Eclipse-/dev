@@ -180,3 +180,17 @@ T.UpdateTargetDebuffsHeader = function(self)
 	if numBuffs == 0 then addition = 0 end
 	h:SetPoint("BOTTOMRIGHT", p.Background, "TOPRIGHT", 0, 3)
 end
+
+function CheckCast(self, unit, name, rank, castid)
+	if unit == "vehicle" then unit = "player" end
+
+	if self.interrupt and UnitCanAttack("player", unit) then
+		self:SetStatusBarColor(1, 0, 0, 0.5)
+	else
+		-- if config.class then
+		self:SetStatusBarColor(unpack(T.UnitColor.class[T.myclass]))
+		-- else
+		-- self:SetStatusBarColor(.4, .4, .4)
+		-- end
+	end
+end	

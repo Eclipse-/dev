@@ -42,6 +42,9 @@ do
 	target.Castbar.button:ClearAllPoints()
 	target.Castbar.button:Point("RIGHT", target.CastbarBG, "LEFT", -3, 0)
 	
+	target.Castbar.PostCastStart = CheckCast
+	target.Castbar.PostChannelStart = CheckCast
+
 	-- combo points
 	target.ComboPointsBar:ClearAllPoints()
 	target.ComboPointsBar:Point("BOTTOMLEFT", target, "TOPLEFT", 0, 7)

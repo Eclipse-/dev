@@ -44,24 +44,14 @@ do
 	player.Castbar:ClearAllPoints()
 	player.Castbar:Point("BOTTOM", UIParent, "BOTTOM", 0, 89)
 	player.Castbar:Height(T.buttonsize - 4)
-	player.Castbar:Width(350)
+	player.Castbar:Width(333)
 	
 	player.Castbar.button:ClearAllPoints()
 	player.Castbar.button:Point("RIGHT", player.CastbarBG, "LEFT", -3, 0)
 	
-	local function CheckCast(self, unit, name, rank, castid)
-		if unit == "vehicle" then unit = "player" end
-
-		if self.interrupt and UnitCanAttack("player", unit) then
-			self:SetStatusBarColor(1, 0, 0, 0.5) -- Set ur colors brah
-		else
-			self:SetStatusBarColor(unpack(T.UnitColor.class["DEATHKNIGHT"])) -- Set ur colors brah
-		end
-	end
-
 	player.Castbar.PostCastStart = CheckCast
 	player.Castbar.PostChannelStart = CheckCast
-
+	
 	-- info
 	player.FlashInfo.ManaLevel = T.SetFontString(player.Panel, C.media.caith, 12)
 	player.FlashInfo.ManaLevel:ClearAllPoints()
