@@ -12,12 +12,16 @@ do
 	-- setup
 	T.UnitframePanels(target, "target")
 	
-	-- size
-	target:Size(250, 57)
+	-- sizes
+	target.Health:Height(29)
+	target.Power:Height(3)
+	target:Width(250)
+	-- don't touch
+	target:SetHeight(target.Health:GetHeight() + target.Power:GetHeight() + target.Panel:GetHeight() + 7)
 
 	-- position
 	target:ClearAllPoints()
-	target:Point("TOP", UIParent, "BOTTOM", 310, 230+adjustXY)
+	target:Point("TOP", UIParent, "BOTTOM", 330, 230+adjustXY)
 
 	-- power bar
 	target.Power:Point("TOPLEFT", target.Health, "BOTTOMLEFT", 0, -3)

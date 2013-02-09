@@ -14,16 +14,20 @@ do
 	if player.Reputation then
 		player.Reputation:Kill()
 	end
-	
+
 	-- setup
 	T.UnitframePanels(player, "player")
 	
-	-- size
-	player:Size(250, 57)
+	-- sizes
+	player.Health:Height(29)
+	player.Power:Height(3)
+	player:Width(250)
+	-- don't touch
+	player:SetHeight(player.Health:GetHeight() + player.Power:GetHeight() + player.Panel:GetHeight() + 7)
 	
 	-- position
 	player:ClearAllPoints()
-	player:Point("TOP", UIParent, "BOTTOM", -310, 230+adjustXY)
+	player:Point("TOP", UIParent, "BOTTOM", -330, 230+adjustXY)
 	
 	-- power bar
 	player.Power:Point("TOPLEFT", player.Health, "BOTTOMLEFT", 0, -3)
