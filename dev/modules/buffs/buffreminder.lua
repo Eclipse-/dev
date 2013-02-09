@@ -85,8 +85,8 @@ if (buffs and buffs[1]) then
 	local frame = CreateFrame("Frame", _, UIParent)
 	frame:SetTemplate("Default")
 	frame:Size(60)
-	frame:SetAlpha(1)
-	frame:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
+	frame:SetAlpha(0)
+	frame:SetPoint("CENTER", UIParent, "CENTER", 0, 250)
 	frame:CreateShadow()
 	
 	frame.icon = frame:CreateTexture(nil, "OVERLAY")
