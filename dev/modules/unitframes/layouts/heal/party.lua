@@ -105,5 +105,9 @@ do
 		self.DebuffHighlight = debuffHighlight
 		self.DebuffHighlightAlpha = 1
 		self.DebuffHighlightFilter = true
+
+		if (self.WeakenedSoul) then
+			self.WeakenedSoul:Kill()
+		end
 	end
 end
