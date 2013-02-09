@@ -17,7 +17,7 @@ do
 	
 	-- position
 	targettarget:ClearAllPoints()
-	targettarget:Point("TOPRIGHT", G.UnitFrames.Target, "BOTTOMRIGHT", 0, -9+adjustXY)
+	targettarget:Point("TOPRIGHT", G.UnitFrames.Target, "BOTTOMRIGHT", 0, -6+adjustXY)
 
 	-- health bar
 	targettarget.Health:Height(18)
