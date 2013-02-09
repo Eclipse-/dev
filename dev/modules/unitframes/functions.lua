@@ -1,7 +1,6 @@
 local T, C, L, G = unpack(Tukui)
 
 function T.UnitframePanels(self, unit)
-	
 	local frame = CreateFrame("Frame", self:GetName().."_Background", self)
 	frame:SetFrameLevel(self.Health:GetFrameLevel() - 1)
 	frame:SetFrameStrata(self.Health:GetFrameStrata())
@@ -15,7 +14,7 @@ function T.UnitframePanels(self, unit)
 	frame:CreateShadow()
 	self.Background = frame
 	
-	if unit == "player" or unit =="target" then
+	if unit == "player" or unit =="target" or unit == "raid" then
 		local spacer = CreateFrame("Frame", self:GetName().."_Spacer", self)
 		spacer:SetFrameLevel(self.Health:GetFrameLevel() + 1)
 		spacer:SetFrameStrata(self.Health:GetFrameStrata())
@@ -188,7 +187,11 @@ function CheckCast(self, unit, name, rank, castid)
 		self:SetStatusBarColor(1, 0, 0, 0.5)
 	else
 		-- if config.class then
-		self:SetStatusBarColor(unpack(T.UnitColor.class[T.myclass]))
+		if unit == "player" then
+			self:SetStatusBarColor(unpack(T.UnitColor.class[T.myclass]))
+		else
+			self:SetStatusBarColor(unpack(T.UnitColor.class[select(2, UnitClass(unit))]))
+		end
 		-- else
 		-- self:SetStatusBarColor(.4, .4, .4)
 		-- end
