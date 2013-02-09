@@ -5,7 +5,7 @@ do
 	local bar = TukuiPetBar
 
 	bar:HookScript("OnEvent", function(self, event, unit)
-		if event == "PLAYER_LOGIN" then
+		if event == "PLAYER_ENTERING_WORLD" then
 			for i = 1, 10 do
 				local b = _G["PetActionButton"..i]
 				local b2 = _G["PetActionButton"..i-1]
