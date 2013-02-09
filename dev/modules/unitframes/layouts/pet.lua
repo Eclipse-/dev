@@ -17,7 +17,7 @@ do
 	
 	-- position
 	pet:ClearAllPoints()
-	pet:Point("TOPLEFT", G.UnitFrames.Player, "BOTTOMLEFT", 0, -9+adjustXY)
+	pet:Point("TOPLEFT", G.UnitFrames.Player, "BOTTOMLEFT", 0, -6+adjustXY)
 
 	-- health bar
 	pet.Health:Height(18)
