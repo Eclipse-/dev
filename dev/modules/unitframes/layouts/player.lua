@@ -233,10 +233,10 @@ do
 		StatueBG:Point("BOTTOMRIGHT", 2, -2)
 		StatueBG:SetTemplate("Default")
 		StatueBG:CreateShadow()	
-
+		
 		if (player.WeakenedSoul) then
 			player.WeakenedSoul:Kill()
-		end
+		end		
 	end
 	------ END CLASSES ------
 	

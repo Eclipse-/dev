@@ -6,3 +6,4 @@ C.media.caith = [[Interface\Addons\dev\media\fonts\caith.ttf]]
 	
 -- textures
 C.media.empath = [[Interface\Addons\dev\media\textures\empath.tga]]
+
