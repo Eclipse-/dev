@@ -26,14 +26,16 @@ do
 			if duration then
 				duration:ClearAllPoints()
 				duration:Point("TOP", child, "BOTTOM", 0, -2)
-				duration:SetFont(C.media.caith, 12, "OUTLINE")
+				duration:SetFont(C.media.caith, 12)
+				duration:SetShadowOffset(1,-1)
 			end
 			
 			-- stack text
 			if count then
 				count:ClearAllPoints()
-				count:Point("BOTTOMRIGHT", -2, 4)
-				count:SetFont(C.media.caith, 12, "OUTLINE")
+				count:Point("BOTTOMRIGHT", -2, 3)
+				count:SetFont(C.media.caith, 12)
+				count:SetShadowOffset(1,-1)
 			end
 		end
 	end
