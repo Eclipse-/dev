@@ -3,33 +3,56 @@ local T, C, L, G = unpack(Tukui)
 do
 	T.RaidFrameAttributes = function()
 		return
-			"TukuiRaid",
-			nil,
-			"solo,raid,party",
-			"oUF-initialConfigFunction", [[
-				local header = self:GetParent()
-				self:SetWidth( header:GetAttribute( "initial-width" ) )
-				self:SetHeight( header:GetAttribute( "initial-height" ) )
-			]],
-			"initial-width", 80,
-			"initial-height", 1,
-			"showParty", true,
-			"showRaid", true,
-			"showPlayer", true,
-			"showSolo", false,
-			"xoffset", T.Scale(3),
-			"yOffset", 3,
-			"point", "LEFT",
-			"groupFilter", "1,2,3,4,5,6,7,8",
-			"groupingOrder", "1,2,3,4,5,6,7,8",
-			"groupBy", "GROUP",
-			"maxColumns", 8,
-			"unitsPerColumn", 5,
-			"columnSpacing", T.Scale(3),
-			"columnAnchorPoint", "BOTTOM"
+		"TukuiRaid", nil, "solo,raid,party",
+		"oUF-initialConfigFunction", [[
+			local header = self:GetParent()
+			self:SetWidth(header:GetAttribute("initial-width"))
+			self:SetHeight(header:GetAttribute("initial-height"))
+		]],
+		"initial-width", 1,
+		"initial-height", 1,
+		"showParty", true,
+		"showPlayer", true,
+		-- "showSolo", true,
+		"xoffset", T.Scale(3),
+		"yOffset", T.Scale(3),
+		"point", "LEFT",
+		"groupFilter", "1,2,3,4,5,6,7,8",
+		"groupingOrder", "1,2,3,4,5,6,7,8",
+		"groupBy", "GROUP",
+		"maxColumns", 8,
+		"unitsPerColumn", 5,
+		"columnSpacing", T.Scale(3),
+		"columnAnchorPoint", "BOTTOM"
+	end
+	
+	T.RaidFramePetAttributes = function()
+		return
+		"TukuiRaidPet", "SecureGroupPetHeaderTemplate", "solo,party,raid",
+		"oUF-initialConfigFunction", [[
+			local header = self:GetParent()
+			self:SetWidth(header:GetAttribute("initial-width"))
+			self:SetHeight(header:GetAttribute("initial-height"))
+		]],
+		"initial-width", 1,
+		"initial-height", 1,
+		"showPlayer", true,
+		"showParty", true,
+		"showRaid", true,
+		-- "showSolo", true,
+		"yOffset", T.Scale(-3),
+		"xOffset", T.Scale(3),
+		"point", "LEFT",
+		"groupFilter", "1,2,3,4,5,6,7,8",
+		"groupingOrder", "1,2,3,4,5,6,7,8",
+		"groupBy", "GROUP",
+		"maxColumns", 8,
+		"unitsPerColumn", 5,
+		"columnSpacing", T.Scale(3),
+		"columnAnchorPoint", "BOTTOM"
 	end
 
-	T.PostUpdateRaidUnit = function(self)
+	T.PostUpdateRaidUnit = function(self, unit)
 		-- kill
 		self.panel:Kill()
 		self:SetBackdrop(nil)
@@ -55,15 +78,30 @@ do
 		self.Power:Point("BOTTOMRIGHT", self.Background, 2, 2)
 		
 		-- sizes
-		self.Health:Height(50)
-		self.Power:Height(1)
-		self:Width(70)
+		if unit:find("pet") then
+			self.Health:Height(10)
+		else
+			self.Health:Height(50)
+		end
+		
+		if unit:find("pet") then
+			self.Power:Kill()
+			self.Health:Point("BOTTOMRIGHT", self.Background, -2, 2)
+		else
+			self.Power:Height(1)
+		end
+		
+		self:Width(80)
 		-- don't touch
 		self:SetHeight(self.Health:GetHeight() + self.Power:GetHeight() + 7)
 		
 		-- name
 		local name = T.SetFontString(self.Health, C.media.caith, 12)
-		name:SetPoint("CENTER", self.Health, "CENTER", 0, 16) 
+		if unit:find("pet") then
+			name:SetPoint("CENTER", self.Health, "CENTER", 0, 0) 
+		else
+			name:SetPoint("CENTER", self.Health, "CENTER", 0, 16) 
+		end
 		self:Tag(name, "[Tukui:nameshort]")
 		self.Name = name
 
@@ -105,9 +143,31 @@ do
 		self.DebuffHighlight = debuffHighlight
 		self.DebuffHighlightAlpha = 1
 		self.DebuffHighlightFilter = true
-
+		
 		if (self.WeakenedSoul) then
 			self.WeakenedSoul:Kill()
 		end
 	end
+	
+	local TukuiRaidPosition = CreateFrame( "Frame" )
+	TukuiRaidPosition:RegisterEvent( "PLAYER_LOGIN" )
+	TukuiRaidPosition:SetScript( "OnEvent", function( self, event )
+		local raid = G.UnitFrames.RaidUnits
+		local pets = G.UnitFrames.RaidPets
+		raid:ClearAllPoints()
+		-- pets:ClearAllPoints()
+
+		raid:SetPoint( "TOP", UIParent, "BOTTOM", 0, 230 )
+		-- pets:SetPoint("LEFT", UIParent, "LEFT", -1000, 0)
+		
+		-- for i = 1, 5 do
+			-- if i == 1 then
+				
+			-- else
+			
+			-- end
+		-- end
+	end)
+	
+	
 end
