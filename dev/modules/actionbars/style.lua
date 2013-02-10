@@ -31,4 +31,12 @@ do
 		end
 	end
 	hooksecurefunc("ActionButton_Update", style)
+	
+	
+	T.SHowHighlightActionButton = T.dummy
+	T.HideHighlightActionButton = T.dummy
+	
+	hooksecurefunc("ActionButton_ShowOverlayGlow", T.ShowHighlightActionButton)
+	hooksecurefunc("ActionButton_HideOverlayGlow", T.HideHighlightActionButton)
+
 end
