@@ -116,3 +116,19 @@ local function AlertFrame_SetGuildChallengeAnchors(alertAnchor)
 	end
 end
 hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", AlertFrame_SetGuildChallengeAnchors)
+
+-- testing
+SlashCmdList.TEST_ACHIEVEMENT = function()
+	PlaySound("LFG_Rewards")
+	AchievementFrame_LoadUI()
+	AchievementAlertFrame_ShowAlert(5780)
+	AchievementAlertFrame_ShowAlert(5000)
+	GuildChallengeAlertFrame_ShowAlert(3, 2, 5)
+	ChallengeModeAlertFrame_ShowAlert()
+	CriteriaAlertFrame_GetAlertFrame()
+	AlertFrame_AnimateIn(CriteriaAlertFrame1)
+	AlertFrame_AnimateIn(DungeonCompletionAlertFrame1)
+	AlertFrame_AnimateIn(ScenarioAlertFrame1)
+	AlertFrame_FixAnchors()
+end
+SLASH_TEST_ACHIEVEMENT1 = "/testalerts"
