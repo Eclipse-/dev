@@ -6,7 +6,7 @@ SlashCmdList.SWAP_LAYOUT = function()
 		TukuiDataPerChar.layout = 1
 		ReloadUI()
 		print(TukuiDataPerChar.layout)
-	elseif TukuiDataPerChar.layout == 1 then 
+	else
 		TukuiDataPerChar.layout = 0
 		ReloadUI()
 		print(TukuiDataPerChar.layout)
