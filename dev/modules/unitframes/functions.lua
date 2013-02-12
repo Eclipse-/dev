@@ -1,5 +1,19 @@
 local T, C, L, G = unpack(Tukui)
 
+-- testing
+SlashCmdList.SWAP_LAYOUT = function()
+	if TukuiDataPerChar.layout == 0 then
+		TukuiDataPerChar.layout = 1
+		ReloadUI()
+		print(TukuiDataPerChar.layout)
+	elseif TukuiDataPerChar.layout == 1 then 
+		TukuiDataPerChar.layout = 0
+		ReloadUI()
+		print(TukuiDataPerChar.layout)
+	end
+end
+SLASH_SWAP_LAYOUT1 = "/layout"
+
 function T.UnitframePanels(self, unit)
 	local frame = CreateFrame("Frame", self:GetName().."_Background", self)
 	frame:SetFrameLevel(self.Health:GetFrameLevel() - 1)
@@ -14,7 +28,7 @@ function T.UnitframePanels(self, unit)
 	frame:CreateShadow()
 	self.Background = frame
 	
-	if unit == "player" or unit =="target" or unit == "raid" then
+	if unit == "player" or unit =="target" or unit == "raid" and TukuiDataPerChar.layout == 0 then
 		local spacer = CreateFrame("Frame", self:GetName().."_Spacer", self)
 		spacer:SetFrameLevel(self.Health:GetFrameLevel() + 1)
 		spacer:SetFrameStrata(self.Health:GetFrameStrata())
@@ -148,20 +162,15 @@ end
 T.ComboPointsBarUpdate = function(self, parent, points)
 	local b = parent.Buffs
 		
-	if T.myclass == "ROGUE" and C.unitframes.movecombobar then
-		-- always show we this option enabled
-		self:Show()
+	if points > 0 then
+		if b then 
+			b:ClearAllPoints() 
+			b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", -2, 19)
+		end
 	else
-		if points > 0 then
-			if b then 
-				b:ClearAllPoints() 
-				b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", -2, 19)
-			end
-		else
-			if b then 
-				b:ClearAllPoints() 
-				b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", -2, 5)
-			end
+		if b then 
+			b:ClearAllPoints() 
+			b:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", -2, 5)
 		end
 	end
 end

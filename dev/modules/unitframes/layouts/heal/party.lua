@@ -1,5 +1,7 @@
 local T, C, L, G = unpack(Tukui)
 
+if TukuiDataPerChar.layout == 1 then return end
+
 do
 	T.RaidFrameAttributes = function()
 		return
@@ -69,9 +71,11 @@ do
 		self.Background:ClearAllPoints()
 		self.Background:SetAllPoints(self)
 
+		self.Health:ClearAllPoints()
 		self.Health:Point("TOPLEFT", self.Background, 2, -2)
 		self.Health:Point("TOPRIGHT", self.Background, -2, -2)
-		
+		self.Health:SetOrientation("VERTICAL")
+
 		self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -3)
 		self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -3)
 		self.Power:Point("BOTTOMLEFT", self.Background, -2, 2)
